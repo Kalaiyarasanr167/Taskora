@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Taskora</title>
+    <link rel="icon" href="taskkora - Copy.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="dashboard-nav">
+
+        <h2>Taskora</h2>
+
+        <div class="user-area">
+            <span id="userName">User</span>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <div class="welcome">
+
+            <div>
+                <h1>My Tasks</h1>
+                <p>Manage and track your tasks</p>
+            </div>
+
+            <button class="add-btn" onclick="openTaskForm()">
+                + Add Task
+            </button>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+
+        </div>
+
+
+        <div class="task-form-container" id="taskFormContainer">
+
+            <h2>Add New Task</h2>
+
+            <form id="taskForm">
+
+                <label>Task Title</label>
+
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Enter task title"
+                    required
+                >
+
+
+                <label>Description</label>
+
+                <textarea
+                    id="taskDescription"
+                    placeholder="Enter task description"
+                ></textarea>
+
+
+                <label>Due Date</label>
+
+                <input
+                    type="date"
+                    id="taskDate"
+                    required
+                >
+
+
+                <label>Priority</label>
+
+                <select id="taskPriority" required>
+
+                    <option value="High">
+                        High
+                    </option>
+
+                    <option value="Medium" selected>
+                        Medium
+                    </option>
+
+                    <option value="Low">
+                        Low
+                    </option>
+
+                </select>
+
+
+                <div class="form-buttons">
+
+                    <button type="submit" class="main-btn">
+                        Add Task
+                    </button>
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        onclick="closeTaskForm()"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <section class="tasks-section">
+
+            <h2>My Tasks</h2>
+
+            <div id="taskList">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
